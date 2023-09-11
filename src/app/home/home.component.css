@@ -1,0 +1,290 @@
+/* -----------------> Global <----------------->*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&display=swap");
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins" !important;
+}
+::selection:not(h1) {
+  background-color: black;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", "sans-serif" !important ;
+}
+
+:root {
+  --main-padding: 80px;
+  --main-color: #00d4ed;
+  --nav-color: #787878;
+}
+
+.head h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #212529 !important ;
+}
+.head h2 span {
+  font-weight: 700 !important;
+  font-family: "Montserrat", "sans-serif";
+}
+
+.head p {
+  font-size: 16px !important;
+  line-height: 21px;
+  color: var(--p-color);
+  width: 75%;
+  text-align: center;
+  margin: auto;
+}
+h3{
+    font-size: 600;
+    padding-top: 20px;
+}
+:has(header nav .nav-item .active:not(.home)) .navbar-expand-lg {
+  background-color: white !important;
+  box-shadow: 2px 2px 30px 2px rgb(0, 0, 0, 0.08);
+  height: 70px;
+  animation-name: chaneHeight;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes chaneHeight {
+  0% {
+    height: 0px;
+  }
+  50% {
+    height: 70px;
+  }
+
+  100% {
+    height: 60px;
+  }
+}
+
+:has(header nav .nav-item .active:not(.home)) .navbar-expand-lg a {
+  color: black !important;
+}
+
+.head h2 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  z-index: 4;
+}
+
+.head h2::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+}
+
+section:not(#footer) {
+  position: relative;
+  z-index: 10;
+}
+
+.vh-120 {
+  height: 120vh;
+}
+/* -----------------> END global <----------------->*/
+
+
+/* ----------------->  HOME <----------------->*/
+#home {
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+#home .carousel-item {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#home .carousel-item-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.359)),
+    url("https://i.redd.it/90vwjfwupk841.jpg");
+}
+#home .carousel-item-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.359)),
+    url("https://i.redd.it/dijsllmsh1941.jpg");
+}
+
+#home .carouselExampleCaptions {
+  position: relative;
+}
+
+#home .carousel-item .info h1 {
+  font-size: 60px;
+  font-weight: 700 !important;
+  margin-bottom: 20px;
+}
+
+#home .carousel-item .info h4 {
+  font-size: 25px;
+}
+
+#home .carousel-control-prev {
+  height: 50px;
+  width: 50px;
+  top: 45%;
+  border: 1px solid white;
+  opacity: 1 !important;
+}
+
+#home .carousel-control-prev:hover,
+#home .carousel-control-next:hover {
+  color: black !important;
+}
+
+#home .carousel-control-prev:hover i,
+#home .carousel-control-next:hover i {
+  color: black !important;
+}
+
+#home .carousel-control-prev i,
+#home .carousel-control-next i {
+  position: relative;
+  z-index: 5;
+  transition: color 0.3s;
+}
+
+#home .carousel-control-next {
+  left: 0px;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  border: 1px solid white;
+  margin-top: 12px;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+#home .carousel-control-prev:before,
+#home .carousel-control-next:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+  transition: left 0.3s;
+  z-index: 3;
+}
+
+#home .carousel-control-prev:hover:before,
+#home .carousel-control-next:hover:before {
+  left: 0;
+}
+
+#home .button-wrapper button {
+  border: 1px solid transparent;
+  color: white;
+  padding: 10px 30px;
+  
+}
+
+#home .button-wrapper .btn-1 {
+  background-color: #00c3da !important;
+}
+
+#home .button-wrapper .btn-2 {
+  border-color: white; 
+  background-color: #00c3da;
+  
+}
+
+#home .carousel-item > * {
+  scale: 0.9;
+  visibility: hidden;
+}
+
+#home .carousel-item.active h1 {
+  animation-delay: 0.3s;
+  animation-name: delay;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#home .carousel-item.active h4 {
+  animation-delay: 0.6s;
+  animation-name: delay;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+#home .carousel-item.active button {
+  animation-delay: 0.9s;
+  animation-name: delay;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes delay {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+#home .btn-1 {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+#home .btn-1:hover {
+  transform: translateY(-1px) !important;
+}
+
+#home .btn-2 {
+  transition: background-color 1s, color 1s;
+}
+
+.btn-2:hover {
+  background-color: darkslategrey !important;
+}
+
+#home .carousel-indicators {
+  bottom: 20px !important;
+}
+
+#home .carousel-indicators button {
+  height: 2px !important;
+  width: 35px;
+}
+
+/* -----------------> END HOME <----------------->*/
+

@@ -1,0 +1,162 @@
+/* -----------------> Global <----------------->*/
+*{
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Montserrat" !important ;
+}
+
+:root{
+    --main-padding:80px;
+    --main-color: #1C1C1C;
+}
+
+
+.head h2{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+:has(header nav .nav-item .active:not(.home)) .navbar-expand-md{
+    background-color: white !important;
+    box-shadow: 2px 2px 30px 2px rgb(0, 0, 0 ,0.08);
+    height:80px;
+    animation-name: chaneHeight;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+@keyframes chaneHeight {
+    0%{
+        height:0px;
+    }
+    50%{
+        height:80px;
+    }
+
+    100%{
+        height:60px;
+    }
+}
+
+:has(header nav .nav-item .active:not(.home)) .navbar-expand-md a{
+    color:black !important;
+}
+
+:has(header nav .nav-item .active:not(.home)) header nav .nav-item .active::after{
+    background-color: black !important;
+}
+.head h2 {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    z-index: 4; 
+}
+
+.head h2::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: -1; 
+}
+
+/* -----------------> END global <----------------->*/
+
+
+/* -----------------> Team <----------------->*/
+#Team{
+    width: 75%;
+    margin: auto;
+    background-color: #F7F7F7;
+    padding: var(--main-padding) 0px;
+}
+
+
+#Team .row .card-body{
+    background-color: #1c2331;
+}
+
+#Team .row .card-body h3{
+    font-size: 25px !important;
+    line-height: 28px !important;
+    font-weight: 500 !important;
+}
+
+
+#Team .row .card-body h4{
+    font-size: 20px !important;
+    line-height: 22px !important;
+    font-weight: 700 !important;
+}
+
+#Team .row img{
+    transition: scale 0.5s;
+    
+}
+
+#Team .row .img:hover img{
+    scale: 1.18;
+}
+
+
+#Team .row .layer{
+    background-color: rgba(255, 255, 255, 0.9);
+    width:0%;
+    height:0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: rotateY(180deg);
+    transition: all 0.5s;
+}
+
+
+#Team .row .layer span{
+    width:40px;
+    height:40px;
+    background-color: black;
+    border-radius: 50%;
+    color:white;
+    position: relative;
+    margin-inline: 10px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#Team .row .layer span:hover{
+    background-color: white;
+    color:var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+#Team .row .layer span i{
+    transform: translateY(40%);
+}
+
+#Team .row .person:hover .layer{
+    opacity: 1;
+    visibility: visible;
+    transform: rotateY(360deg);
+    width:97%;
+    height:97%;
+}
+#Team .row .person:hover span{
+    visibility: visible;
+    opacity: 1;
+}
+/* -----------------> END Team <----------------->*/
+
+
+
+

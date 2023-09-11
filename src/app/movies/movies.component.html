@@ -1,0 +1,31 @@
+
+<div class="col">
+    <button class="btn btn-outline-success my-2 my-sm-0 float-end" (click)="changeLanguage()">
+        {{ language }}
+    </button>
+    <mat-paginator [length]="totalMovies" [pageSize]="pageSize" aria-label="Select page" (page)=" changePage ($event) ">
+    </mat-paginator>
+</div>
+
+<div class="card" style="width: 18rem;margin: auto; " *ngFor=" let movie of allMovies " height="15%" >
+    <a [routerLink]="['/moviedetails', movie.id ]">
+        <img class="card-img-top" src="{{ imagePath + movie.poster_path  }}" alt="Card image cap">
+    </a>
+    <div class="card-body">
+        <h2 class="card-title">{{movie.title}}</h2>
+        <p class="card-text" *ngIf="movie.showDetials">{{movie.overview}}
+        </p>
+        <h3> vote_count: {{movie.vote_count}}</h3>
+        <h4 
+        style="display: inline-block; padding-bottom: 5px;">vote_average : <span style="background-color: #1c2331; border-radius: 50%
+        ;color: aliceblue; ">{{movie.vote_average}}</span></h4>
+        <p>Adult : {{movie.adult}}</p>
+                 <p class="card-text" *ngIf="movie.showDetails">{{movie.overview}}</p>
+        <button class="btn btn-primary">watch</button>
+        <button class="btn btn-success"(click)="toggleDescription(movie.id)" style="background-color: darkslategrey;">{{movie.showDetails?'Hide ':'Show '}}Details</button>
+      
+
+        <!-- <button class="btn btn-primary"vote_count (click)="hide1(product.id)">Show/Hide</button> -->
+
+    </div>
+</div>

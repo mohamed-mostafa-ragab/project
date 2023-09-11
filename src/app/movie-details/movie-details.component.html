@@ -1,0 +1,17 @@
+<div class="container px-3 text-center">
+    <div class="col" style="background-color:darkslategrey;width: 50%;margin: auto;">
+        <!-- image -->
+        <div class="col">
+            <img src="{{imagePath + salectedmovie.poster_path }}" class="card-img-top" alt="..."
+                style="width: 300px;" />
+        </div>
+        <!-- title and description -->
+        <div class="col" style="margin: auto;color: aliceblue;">
+            <h3>{{ salectedmovie?.name }}</h3>
+            <p>{{ salectedmovie?.overview }}</p>
+
+            <button routerLink="/home" class="btn btn-primary my-2 mx-2 my-sm-0">
+                Watch
+            </button>
+        </div>
+    </div>
